@@ -1,0 +1,22 @@
+<h1>Listing people</h1>
+ 
+<table>
+  <tr>
+    <th>First name & Last name</th>
+    <th>Email</th>
+    <th>Age</th>
+    <th>Delete</th>
+  </tr>
+  <% @people.each do |person| %>
+    <tr>
+      <td><%= link_to "#{person.first_name} #{person.last_name}", person %></td>
+      <td><%= person.email %></td>
+      <td><%= person_age(person.birthday) %></td>
+      <td><%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+ 
+<br>
+
+<%= link_to 'Add a new person', new_person_path %>

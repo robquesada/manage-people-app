@@ -1,0 +1,15 @@
+<%= form_for @person do |f| %>
+  <%= render 'flash_messages' %>
+
+  <%= f.text_field :first_name, placeholder: 'First Name' %>
+  <%= f.text_field :last_name, placeholder: 'Last Name' %>
+  <%= f.text_field :email, placeholder: 'Email' %>
+  <%= f.text_field :job, placeholder: 'Job' %>
+  <%= f.text_field :gender, placeholder: 'Gender' %>
+  <%= f.text_area :bio, placeholder: 'Bio' %>
+  <%= f.date_field :birthday %>
+
+  <%#= f.select :gender, options_for_select(@genders) %>
+
+  <%= f.submit 'Save' %>
+<% end %>
