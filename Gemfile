@@ -12,3 +12,4 @@ gem 'turbolinks', '~> 2.5.3'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
+gem 'factory_girl_rails', '~> 4.5.0', group: :test
