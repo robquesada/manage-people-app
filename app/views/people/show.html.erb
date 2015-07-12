@@ -1,0 +1,24 @@
+<h1><%= "#{@person.first_name} #{@person.last_name}'s profile" %></h1>
+
+<div>
+  <%= label_tag 'First name' %>
+  <%= @person.first_name %>
+  <%= label_tag 'Last name' %>
+  <%= @person.last_name %>
+  <%= label_tag 'Email' %>
+  <%= @person.email %>
+  <%= label_tag 'Job' %>
+  <%= @person.job %>
+  <%= label_tag 'Gender' %>
+  <%= @person.gender %>
+  <%= label_tag 'Birthday (Age)' %>
+  <%= "#{@person.birthday} (#{person_age(@person.birthday)})" %>
+  <%= label_tag 'Bio' %>
+  <%= @person.bio %>
+</div>
+ 
+<br>
+
+<%= link_to 'Edit', edit_person_path(@person) %>
+<%= link_to 'Delete', @person, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Cancel', people_path %>
