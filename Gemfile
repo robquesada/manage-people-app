@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 gem 'factory_girl_rails', '~> 4.5.0', group: :test
+gem 'minitest-rails'
 gem 'resque'
 gem 'resque_mailer'
 gem 'resque-scheduler'
