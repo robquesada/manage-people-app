@@ -1,0 +1,11 @@
+<html>
+  <body>
+    <h1>Hello!</h1>
+    <% action = (@action == 'added') ? 'joined' : 'left' %>
+    <p>
+      Please notice that <%= "#{@person['first_name']} #{@person['last_name']}" %> has <%= action %> the application.<br>
+    </p>
+    <p>Regards,</p>
+    <p>People System</p>
+  </body>
+</html>

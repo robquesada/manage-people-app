@@ -13,6 +13,7 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
 
     if @person.save
+      SendEmailJob.perform_later(@person, 'added')
       redirect_to new_person_path
     else
       flash.now[:error] = @person.errors.messages
@@ -34,7 +35,9 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-    @person.destroy
+    @person.delete
+    person_hash = @person.as_json
+    SendEmailJob.perform_later(person_hash, 'deleted')
     redirect_to people_path
   end
 
