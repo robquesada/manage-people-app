@@ -13,3 +13,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 gem 'factory_girl_rails', '~> 4.5.0', group: :test
+gem 'resque'
+gem 'resque_mailer'
+gem 'resque-scheduler'
+gem 'mailcatcher'
+
+group :development do
+  gem 'better_errors', '~> 2.1.1'
+  gem 'binding_of_caller', '~> 0.7.2'
+end
