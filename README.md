@@ -8,7 +8,7 @@ This application allows you to manage people, and receive email notifications wh
 ## Instalation process
 
 #### System dependencies
-In addition to have the standard gems to run a RoR project, you need to have installed the following:
+In addition to have the standard setup to run a RoR project, you need to have installed the following:
 
 * Ruby version 2.2
 * Rails version 4.2
