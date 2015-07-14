@@ -59,8 +59,9 @@ If you're a Mac user run  `brew install mysql` or in Ubuntu run  `sudo apt-get i
 
 0. **Go to**
 
-    [http://localhost:3000/](http://localhost:3000)
-
+  * [http://localhost:3000/](http://localhost:3000) To **use the app**
+  * [http://localhost:1080/](http://localhost:1080) To check the emails sended
+  * [http://0.0.0.0:5678/overview](http://0.0.0.0:5678/overview) If you want to check the queues
 
 #### How to run the tests
 
