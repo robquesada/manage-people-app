@@ -16,7 +16,7 @@ In addition to have the standard gems to run a RoR project, you need to have ins
 
 ##### Database setup
 
-By default this project use [mysql2](https://github.com/brianmario/mysql2) database (although you can config your own database by changing the config/database.yml file and the Gemfile)
+By default this project use [mysql2](https://github.com/brianmario/mysql2) database (although you can config your own database by changing the `config/database.yml` file and the `Gemfile`)
 
 ###### Install mysql2
 If you're a Mac user run  `brew install mysql` or in Ubuntu run  `sudo apt-get install libmysqlclient-dev`
