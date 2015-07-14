@@ -5,17 +5,69 @@ This application allows you to manage people, and receive email notifications wh
 
 ## Project delivery date: Monday, July 13, 2015.
 
-## Getting started …
-
-## Instalation process …
-
-Ruby version: 2.2 Rails version: 4.2
+## Instalation process
 
 #### System dependencies
-#### Configuration
-#### Database creation 
-#### Database initialization
-#### How to run the test suite
-#### Services (job queues, cache servers, search engines, etc.)
-#### Deployment instructions
-#### …
+In addition to have the standard gems to run a RoR project, you need to have installed the following:
+
+* Ruby version 2.2
+* Rails version 4.2
+* [Redis Server](http://redis.io/topics/quickstart)
+
+##### Database setup
+
+By default this project use [mysql2](https://github.com/brianmario/mysql2) database (although you can config your own database by changing the config/database.yml file and the Gemfile)
+
+###### Install mysql2
+If you're a Mac user run  `brew install mysql` or in Ubuntu run  `sudo apt-get install libmysqlclient-dev`
+
+#### Instructions to run the project in your local environment
+
+0. **Clone repository**
+  * with SSH: `git clone git@github.com:robquesada/manage-people-app.git`
+  * with HTTPS: `git clone https://github.com/robquesada/manage-people-app.git`
+
+0. **Move to project directory**
+
+    `cd manage-people-app`
+
+0. **Install gems**
+
+    `bundle install` or `bundle update`
+
+0. **Configure Database**
+    * Edit the `config/database.yml` file with your preference database. (Recommended: mysql2)
+    * Setup database: `rake db:setup`
+
+0. **Start servers and workers**
+  * Run `mailcatcher`
+
+    [Mailcatcher](http://mailcatcher.me/) helps you to send and receive emails in your local environment instead of handle real smtp configurations. **Make sure** you have it installed running `gem install mailcatcher`.
+    If you want to use real emails, setup `config.action_mailer.smtp_settings` in `config/development.rb` file.
+
+  * Run `redis-server`
+
+  * Run `resque-web`
+
+    This will show you an overview of the Queues and its behaviours.
+  
+  * Run `QUEUE='*' rake environment resque:work`
+
+    This wake up the queues on the project, used to send emails.
+  
+  * Run `rails s`
+
+0. **Go to**
+
+    [http://localhost:3000/](http://localhost:3000)
+
+
+#### How to run the tests
+
+0. **Prepare the test database (only first time)**
+
+  Run `bundle exec rake db:drop db:create db:schema:load RAILS_ENV=test`
+
+0. **Run tests**
+
+  Run `rake test`
