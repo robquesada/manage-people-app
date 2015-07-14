@@ -13,7 +13,7 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
 
     if @person.save
-      SendEmailJob.perform_later(@person, 'added')
+      send_email(@person, 'added')
       redirect_to new_person_path
     else
       flash.now[:error] = @person.errors.messages
@@ -36,12 +36,17 @@ class PeopleController < ApplicationController
 
   def destroy
     @person.delete
-    person_hash = @person.as_json
-    SendEmailJob.perform_later(person_hash, 'deleted')
+    send_email(@person, 'deleted')
     redirect_to people_path
   end
 
   private
+
+  def send_email(person, action)
+    person_hash = { 'first_name' => @person.first_name,
+                    'last_name' => @person.last_name }
+    SendEmailJob.perform_later(person_hash, action)
+  end
 
   def find_person
     @person = Person.find(params[:id])
