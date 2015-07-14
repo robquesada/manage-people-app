@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
   before_filter :find_person, only: [:show, :edit, :update, :destroy]
+  before_filter :find_genders, only: [:new, :edit]
 
   def index
     @people = Person.order(:first_name)
@@ -41,6 +42,10 @@ class PeopleController < ApplicationController
   end
 
   private
+
+  def find_genders
+    @genders = ['Male', 'Female', 'Other']
+  end
 
   def send_email(person, action)
     person_hash = { 'first_name' => @person.first_name,
