@@ -18,6 +18,8 @@ gem 'resque'
 gem 'resque_mailer'
 gem 'resque-scheduler'
 gem 'mailcatcher'
+gem "therubyracer"
+gem 'bootstrap-sass', '~> 3.3.5'
 
 group :development do
   gem 'better_errors', '~> 2.1.1'
