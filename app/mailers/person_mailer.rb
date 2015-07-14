@@ -3,8 +3,8 @@ class PersonMailer < ActionMailer::Base
   default to: Proc.new { Person.pluck(:email) },
           from: 'noreply@peoplesystem.com'
 
-  def mail_people(person, action)
-    @person = person
+  def mail_people(person_hash, action)
+    @person_hash = person_hash
     @action = action
     mail(subject: "People App - New person #{@action}")
   end

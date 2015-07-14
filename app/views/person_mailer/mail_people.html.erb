@@ -3,7 +3,7 @@
     <h1>Hello!</h1>
     <% action = (@action == 'added') ? 'joined' : 'left' %>
     <p>
-      Please notice that <%= "#{@person['first_name']} #{@person['last_name']}" %> has <%= action %> the application.<br>
+      Please notice that <%= "#{@person_hash['first_name']} #{@person_hash['last_name']}" %> has <%= action %> the application.<br>
     </p>
     <p>Regards,</p>
     <p>People System</p>
