@@ -1,7 +1,7 @@
 Management People App
 =============
 
-This application allows you to manage people, and receive email notifications when a person is added or removed from the records.
+This application allows you to manage people (add, edit, remove and delete), and receive email notifications when a person is added or removed from the records.
 
 ## Project delivery date: Monday, July 13, 2015.
 
