@@ -60,7 +60,7 @@ If you're a Mac user run  `brew install mysql` or in Ubuntu run  `sudo apt-get i
 0. **Go to**
 
   * [http://localhost:3000/](http://localhost:3000) To **use the app**
-  * [http://localhost:1080/](http://localhost:1080) To check the emails sended
+  * [http://localhost:1080/](http://localhost:1080) To check the emails sended when a person is added or removed
 
 #### How to run the tests
 
