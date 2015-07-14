@@ -1,12 +1,9 @@
-<div class='large-12 columns'>
-  <div class='row'>
-    <div class='row final'></div>
-      <center>
-		<a class='header'><%= "Edit #{@person.first_name} #{@person.last_name} information" %></a>
-      </center>
-      <hr>
-      <%= render 'form' %>
+<div class="content-fluid col-sm-6">
+  <h1><%= "Edit #{@person.first_name} #{@person.last_name} information" %></h1>
+  <hr>
+  <%= render 'form' %>
+  <div>
+    <%= link_to 'Cancel', person_path(@person), class: 'btn btn-default' %>
   </div>
 </div>
-
-<%= link_to 'Cancel', person_path(@person) %>
+<br><br>

@@ -1,11 +1,11 @@
 <% if flash[:error] %>
-    <div data-alert class='alert-box alert radius'>
-        We're sorry, we couldn't save the info:
-        <% flash[:error].each do |attr, messages| %>
-          <% messages.each do | msg | %>
-            <div class='row'><%= attr.to_s.humanize + ' ' + msg.capitalize %></div>
-          <% end %>
+    <div class='alert'>
+			<a href='#' class='close'>&times;</a>
+      <b>We're sorry, we couldn't save the info:</b>
+      <% flash[:error].each do |attr, messages| %>
+        <% messages.each do | msg | %>
+          <div><%= attr.to_s.humanize + ' ' + msg.capitalize %></div>
         <% end %>
-      <a href='#' class='close'>&times;</a>
+      <% end %>
     </div>
 <% end %>
