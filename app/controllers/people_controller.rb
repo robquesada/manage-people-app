@@ -15,7 +15,7 @@ class PeopleController < ApplicationController
 
     if @person.save
       send_email(@person, 'added')
-      redirect_to new_person_path
+      redirect_to person_path(@person)
     else
       flash.now[:error] = @person.errors.messages
       render 'new'
